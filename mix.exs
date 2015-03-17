@@ -33,7 +33,8 @@ defmodule Poison.Mixfile do
      {:ex_doc, "~> 0.7", only: :docs},
      {:jiffy, github: "davisp/jiffy", only: :bench},
      {:exjsx, github: "talentdeficit/exjsx", only: :bench},
-     {:jazz, github: "meh/jazz", only: :bench}]
+     {:jazz, github: "meh/jazz", only: :bench},
+     {:inflex, "~> 1.0.0" }]
   end
 
   defp package do
