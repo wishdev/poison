@@ -93,9 +93,11 @@ defmodule Poison.Parser do
 
   defp object_pairs(other, _, _), do: syntax_error(other)
 
-  defp object_name(name, :atoms),  do: String.to_atom(name)
-  defp object_name(name, :atoms!), do: String.to_existing_atom(name)
-  defp object_name(name, _keys),   do: name
+  defp object_name(name, :atoms),             do: String.to_atom(name)
+  defp object_name(name, :underscore_atoms),  do: String.to_atom(Inflex.underscore(name))
+  defp object_name(name, :atoms!),            do: String.to_existing_atom(name)
+  defp object_name(name, :underscore_atoms!), do: String.to_existing_atom(Inflex.underscore(name))
+  defp object_name(name, _keys),              do: name
 
   ## Arrays
 
